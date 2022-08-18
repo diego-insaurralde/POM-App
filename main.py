@@ -11,24 +11,19 @@ class MenuPrincipal(GridLayout):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.im = Image(source="POM.png")
-        self.im.center = True
+        
         self.rows = 5
-        self.add_widget(self.im)
+        self.add_widget(self.titulo)
         self.add_widget(self.continuar_botao_visual)
         self.add_widget(self.iniciar_botao_visual)
         self.add_widget(self.produtividade_botao_visual)
         self.add_widget(self.sair_botao_visual)
         
 
-    @property
 
+    @property
     def titulo(self):
-        
-        titulo = Label(text="POM")
-        titulo.font_name = "Roboto-Bold" 
-        titulo.font_size = 50           
-        titulo.color  = (95, 158, 160, 1)     
+        titulo = Image(source="POM.png")   
         return titulo
 
     @property
