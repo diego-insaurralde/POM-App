@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS inicio(
     meta TEXT NOT NULL,
     dias INTEGER NOT NULL,
     horas_dias INTEGER NOT NULL,
-    data_inicio DATE NOT NULL
+    data_inicio VARCHAR(10) NOT NULL
 )
 """)
 
@@ -21,7 +21,10 @@ CREATE TABLE IF NOT EXISTS inicio(
 
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS produtividade(
-    data DATE NOT NULL PRIMARY KEY,
-    minutos INTEGER NOT NULL
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    data VARCHAR(10) NOT NULL,
+    minutos INTEGER NOT NULL,
+    id_inicio INTEGER,
+    FOREIGN KEY(id_inicio) REFERENCES inicio(id) 
 )
 """)
