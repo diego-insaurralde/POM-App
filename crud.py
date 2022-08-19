@@ -76,10 +76,10 @@ class Grafico:
            # print(self.resultado2)
 
     def plotar(self):        
-        fig, ax = plt.subplots(figsize=(5, 3))
+        fig, ax = plt.subplots(figsize=(5, 5))
         ax.plot(self.resultado1, self.resultado2)
         ax.set_xlabel("Dias")
-        ax.set_ylabel("Tempo")
+        ax.set_ylabel("Tempo (minutos)")
         ax.set_title("Produtividade")
         fig.savefig("grafico")
 

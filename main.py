@@ -1,6 +1,6 @@
 from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
-from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.label import Label
 from kivy.uix.textinput import TextInput  
 from kivy.uix.button import Button
@@ -359,10 +359,10 @@ class Temporizador(Label):
     def on_tf5(self, instance, value):
         self.text = f"{int(value//60)}:{int(value%60)}"
 
-class Produtividade(BoxLayout):
+class Produtividade(FloatLayout):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-
+        
 
         
     
@@ -370,7 +370,7 @@ class Produtividade(BoxLayout):
         self.grafico = Grafico()
         self.grafico.plotar()
         self.grafico_imagem = Image(source="grafico.png") 
-        #self.grafico.allow_stretch=True 
+        self.grafico.allow_stretch=True 
 
         self.add_widget(self.grafico_imagem)
         

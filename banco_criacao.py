@@ -28,3 +28,39 @@ CREATE TABLE IF NOT EXISTS produtividade(
     FOREIGN KEY(id_inicio) REFERENCES inicio(id) 
 )
 """)
+executar = False 
+if executar: 
+    cursor.execute("""
+    INSERT INTO produtividade
+    (data, minutos, id_inicio)
+    VALUES ("2022-08-15", 300, 1)
+        """
+    )
+
+    conn.commit()
+
+    cursor.execute("""
+    INSERT INTO produtividade
+    (data, minutos, id_inicio)
+    VALUES ("2022-08-16", 400, 1)
+        """
+    )
+
+    conn.commit()
+
+    cursor.execute("""
+    INSERT INTO produtividade
+    (data, minutos, id_inicio)
+    VALUES ("2022-08-18", 500, 1)
+        """
+    )
+
+    conn.commit()
+
+    cursor.execute("""
+    INSERT INTO produtividade
+    (data, minutos, id_inicio)
+    VALUES ("2022-08-19", 600, 1)
+        """
+    )
+
