@@ -315,8 +315,10 @@ class Temporizador(Label):
     color = [0,0,0,1]
     font_size = 25
     bold = True
-    tf25 = NumericProperty(5)
-    tf5 = NumericProperty(5)
+    tempo_sessao = 25*60
+    tempo_descanso = 5*60
+    tf25 = NumericProperty(tempo_sessao)
+    tf5 = NumericProperty(tempo_descanso)
 
     def start25(self):
         Animation.cancel_all(self)
